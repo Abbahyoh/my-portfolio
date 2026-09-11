@@ -1,0 +1,122 @@
+<!-- @ts-nocheck -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator App</title><html lang="en">
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.calculator {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 20px;
+  width: 300px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#display {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  font-size: 28px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: none;
+  text-align: right;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 18px;
+  font-size: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+  <h1>Calculator</h1>
+
+  <input type="text" id="display" readonly>
+
+  <div class="buttons">
+    <button onclick="clearDisplay()">C</button>
+    <button onclick="deleteLast()">⌫</button>
+    <button onclick="addToDisplay('/')">÷</button>
+    <button onclick="addToDisplay('*')">×</button>
+
+    <button onclick="addToDisplay('7')">7</button>
+    <button onclick="addToDisplay('8')">8</button>
+    <button onclick="addToDisplay('9')">9</button>
+    <button onclick="addToDisplay('-')">−</button>
+
+    <button onclick="addToDisplay('4')">4</button>
+    <button onclick="addToDisplay('5')">5</button>
+    <button onclick="addToDisplay('6')">6</button>
+    <button onclick="addToDisplay('+')">+</button>
+
+    <button onclick="addToDisplay('1')">1</button>
+    <button onclick="addToDisplay('2')">2</button>
+    <button onclick="addToDisplay('3')">3</button>
+    <button onclick="calculate()">=</button>
+
+    <button onclick="addToDisplay('0')">0</button>
+    <button onclick="addToDisplay('.')">.</button>
+  </div>
+</div>
+
+<script>
+function addToDisplay(value)
+                       {
+  document.getElementById("display").value += value;
+}
+
+function clearDisplay() {
+  document.getElementById("display").value = "";
+}
+
+function deleteLast() {
+  let display = document.getElementById("display");
+  display.value = display.value.slice(0, -1);
+}
+
+function calculate() {
+  let display = document.getElementById("display");
+
+  try {
+    display.value = eval(display.value);
+  } catch {
+    display.value = "Error";
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  line-height: 1.6;
+}
+
+header {
+  padding: 60px 20px;
+  text-align: center;
+  background: #1e293b;
+}
+
+header h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 20px;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skill {
+  background: #334155;
+  padding: 12px 25px;
+  border-radius: 30px;
+}
